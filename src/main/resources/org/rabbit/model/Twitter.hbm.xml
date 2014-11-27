@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!--must-->
+<hibernate-mapping package="org.rabbit.model">
+    <class name="Twitter" table="Twitter">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="uid" column="uid"/>
+        <property name="createdDate" type="timestamp" column="createdDate"/>
+        <property name="flag" column="flag" />
+        <property name="text" column="text"/>
+    </class>
+</hibernate-mapping>

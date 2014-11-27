@@ -1,4 +1,4 @@
-package model;
+package org.rabbit.model2;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

@@ -1,17 +1,19 @@
-package model;
+package org.rabbit.model2;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="student")
+@XmlRootElement(name = "student")
 public class Student {
     private int id;
     private String firstName;
     private String lastName;
     private int age;
 
-    public Student(){}
+    public Student() {
+    }
+
     public Student(int id, String firstName, String lastName, int age) {
         this.id = id;
         this.firstName = firstName;

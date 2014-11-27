@@ -1,7 +1,7 @@
-package svc;
+package org.rabbit.svc;
 
 
-import model.Student;
+import org.rabbit.model2.Student;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -14,8 +14,8 @@ public class StudentSvc {
     @GET
     @Path("/student/{name}")
     @Produces("application/xml")
-    public Student getStudent(@PathParam("name") String name){
-        Student student=new Student(1,name,"John",22);
+    public Student getStudent(@PathParam("name") String name) {
+        Student student = new Student(1, name, "John", 22);
         return student;
     }
 }

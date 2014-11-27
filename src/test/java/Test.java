@@ -1,12 +1,12 @@
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
-import model.Person;
+import org.rabbit.model2.Person;
 
-// TODO: WHY DOESN'T WORK?
+// TODO: WHY DOESN'T WORK in Mac?
 // Reference: http://jlunaquiroga.blogspot.jp/2014/01/restful-web-services-with-jetty-and.html
 public class Test {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Client client = Client.create();
         //Get
         WebResource webResource = client.resource("http://localhost:8080/person/getPerson");
@@ -21,6 +21,7 @@ public class Test {
         System.out.println(output);
 
         //Post
+        output.setName("Goodman");
         webResource = client.resource("http://localhost:8080/person/postPerson");
         webResource.accept("application/json").post(ClientResponse.class, output);
     }

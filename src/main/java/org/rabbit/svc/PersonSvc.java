@@ -1,13 +1,12 @@
-package svc;
+package org.rabbit.svc;
 
-import model.Address;
-import model.Person;
+import org.rabbit.model2.Address;
+import org.rabbit.model2.Person;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 
 @Path("/person")
 public class PersonSvc {
@@ -15,7 +14,6 @@ public class PersonSvc {
     @GET
     @Path("/getPerson")
     @Produces("application/json")
-//    @Produces(MediaType.APPLICATION_JSON)
     public Person getPerson() {
         Person p = new Person();
         p.setName("John");

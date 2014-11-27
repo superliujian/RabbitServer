@@ -1,4 +1,4 @@
-package model;
+package org.rabbit.model2;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -7,15 +7,6 @@ public class Address {
     private String street = "";
     private String city = "";
     private int zip = 0;
-
-    @Override
-    public String toString() {
-        return "Address{" +
-                "street='" + street + '\'' +
-                ", city='" + city + '\'' +
-                ", zip=" + zip +
-                '}';
-    }
 
     public String getStreet() {
         return street;
