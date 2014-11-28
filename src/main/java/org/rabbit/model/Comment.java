@@ -2,6 +2,7 @@ package org.rabbit.model;
 
 import java.util.Date;
 
+// TODO: change type of id to long
 public class Comment {
 
     private int id;

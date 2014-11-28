@@ -4,13 +4,23 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!--must-->
 <hibernate-mapping package="org.rabbit.model">
-    <class name="Twitter" table="Twitter">
-        <id name="id" column="id">
+    <class name="User" table="User">
+        <id name="id" column="UID">
             <generator class="native"/>
         </id>
-        <property name="uid" column="uid"/>
-        <property name="createdDate" type="timestamp" column="createdDate"/>
-        <property name="flag" column="flag" />
-        <property name="text" column="text"/>
+        <property name="pid" column="PeerID" />
+        <property name="name" column="Name" />
+        <property name="password" column="Password"/>
+        <property name="createdDate" type="timestamp" column="CreatedDate"/>
+    </class>
+    <class name="Twitter" table="Twitter">
+        <id name="id" column="TID">
+            <generator class="native"/>
+        </id>
+        <!--<many-to-one name="uid" column="UID" not-null="true"/>-->
+        <property name="uid" column="UID"/>
+        <property name="createdDate" type="timestamp" column="CreatedDate"/>
+        <property name="flag" column="Flag" />
+        <property name="text" column="Text"/>
     </class>
 </hibernate-mapping>

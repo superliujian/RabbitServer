@@ -8,12 +8,12 @@ import javax.ws.rs.*;
 @Path("/twitter")
 public class TwitterSvc {
 
-    @POST
+    @GET
     @Path("/twitters")
-    @Consumes("application/json")
     @Produces("application/json")
     // get twitters according to user credential
-    public Twitter[] getTwitters(User user) {
+    public Twitter[] getTwitters(@QueryParam("access_token") String access_token) {
+        System.out.println(access_token);
         Twitter[] twitters = HibernateUtil.getTwitters();
         return twitters;
     }
@@ -24,7 +24,8 @@ public class TwitterSvc {
     @Consumes("application/json")
     @Produces("application/json")
     // get twitters according to user credential
-    public Twitter addTwitter(Twitter twitter) {
+    public Twitter addTwitter(Twitter twitter, @QueryParam("access_token") String access_token) {
+        System.out.println(access_token);
         HibernateUtil.addTwitter(twitter);
         return twitter;
     }
@@ -33,7 +34,8 @@ public class TwitterSvc {
     @Path("/removeTwitter/{id}")
     @Produces("application/json")
     // get twitters according to user credential
-    public boolean removeTwitter(@PathParam("id") int id) {
+    public boolean removeTwitter(@PathParam("id") int id, @QueryParam("access_token") String access_token) {
+        System.out.println(access_token);
         Twitter twitter=new Twitter();
         twitter.setId(id);
         return HibernateUtil.removeTwitter(twitter);

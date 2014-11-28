@@ -3,19 +3,19 @@ package org.rabbit.model;
 import java.util.Date;
 
 public class User {
-    private int uid;
+    private int id;
     private String name;
     private String password;
     // peer id
     private int pid;
     private Date createdDate;
 
-    public int getUid() {
-        return uid;
+    public int getId() {
+        return id;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setId(int uid) {
+        this.id = uid;
     }
 
     public int getPid() {
