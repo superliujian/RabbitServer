@@ -12,11 +12,16 @@ import javax.ws.rs.Produces;
 public class UserSvc {
 
     @POST
-    @Path("/addUser")
+    @Path("/register")
     @Consumes("application/json")
     @Produces("application/json")
-    public User addUser(User user){
+    public User register(User user){
         user.setPassword("encrypted");
         return UserManager.addUser(user);
+    }
+
+
+    public void destory(User user){
+
     }
 }
