@@ -1,36 +1,14 @@
 package org.rabbit.svc;
 
-import org.rabbit.model.User;
-
 import javax.ws.rs.*;
+import java.util.UUID;
 
+// root resources
 @Path("/token")
 public class TokenSvc {
-    @POST
-    @Path("/postToken")
-    @Produces("text/plain")
-    @Consumes("application/json")
-    public String postToken(User user) {
-        if (user.getName().isEmpty() || user.getPassword().isEmpty()) {
-            return "";
-        }
-
-        if (user.getName().equals("John")) {
-            return "123456";
-        }
-
-        return "";
+    @GET
+    public String get(@HeaderParam("username") String username, @HeaderParam("password") String password) {
+        System.out.println("username: "+username+", password: "+password);
+        return UUID.randomUUID().toString();
     }
-
-//    @GET
-//    @Path("/getToken")
-//    @Produces("application/json")
-//    public User getToken(){
-//
-//        User user=new User();
-//        user.setName("John");
-//        user.setPassword("12345");
-//
-//        return user;
-//    }
 }

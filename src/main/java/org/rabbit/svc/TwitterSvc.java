@@ -8,6 +8,7 @@ import javax.ws.rs.*;
 @Path("/twitter")
 public class TwitterSvc {
 
+    // sub resources
     @GET
     @Path("/twitters")
     @Produces("application/json")
